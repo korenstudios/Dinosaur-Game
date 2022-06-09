@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinosaur Game</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="dino-game-container">
+      <div id="game">
+        <div id="dino-box">
+          <img class="dino-img" src="./img/dino_idle.gif" alt="Dinosaur" />
+        </div>
+        <div id="cactus-box">
+          <img class="cactus-img" src="./img/cactus.png" alt="Cactus" />
+        </div>
+        <div class="cloud1-box">
+          <img class="cloud1" src="./img/cloud.png" alt="cloud1" />
+        </div>
+        <div class="cloud2-box">
+          <img class="cloud2" src="./img/cloud.png" alt="cloud2" />
+        </div>
+        <div class="cloud3-box">
+          <img class="cloud3" src="./img/cloud.png" alt="cloud3" />
+        </div>
+        <div class="score">
+          <span class="score-digits">0000</span
+          ><span class="count-score">0</span>
+        </div>
+      </div>
+      <div class="game-over">
+        <h3>Game Over</h3>
+        <button id="reload-btn"></button>
+      </div>
+    </div>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

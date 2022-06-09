@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dino-game-font: "Press Start 2P", cursive;
+  --img-pixelated: pixelated;
+  --cloud-img-color: invert(55%) sepia(7%) saturate(20%) hue-rotate(335deg)
+    brightness(90%) contrast(89%);
+  --img-night-color: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg)
+    brightness(103%) contrast(103%);
+}
+
+.dino-game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+#game {
+  width: 600px;
+  height: 200px;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}
+
+#dino-box {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: 148px;
+}
+
+#dino-box .dino-img {
+  width: 50px;
+  height: 50px;
+  image-rendering: var(--img-pixelated);
+}
+
+.jump {
+  animation: jump 0.5s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 148px;
+  }
+
+  30% {
+    top: 100px;
+  }
+
+  50% {
+    top: 60px;
+  }
+
+  80% {
+    top: 100px;
+  }
+
+  100% {
+    top: 148px;
+  }
+}
+
+#cactus-box {
+  width: 20px;
+  height: 40px;
+  position: relative;
+  top: 108px;
+  left: 610px;
+}
+
+.cactus-active {
+  animation: cactus 2s infinite ease-in;
+}
+
+#cactus-box .cactus-img {
+  width: 20px;
+  height: 40px;
+  image-rendering: var(--img-pixelated);
+}
+
+@keyframes cactus {
+  0% {
+    left: 575px;
+  }
+
+  100% {
+    left: -20px;
+  }
+}
+
+.cloud1-box {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: -70px;
+  right: -460px;
+  transform: translateX(145px);
+}
+
+.cloud1-box .cloud1 {
+  image-rendering: var(--img-pixelated);
+  filter: var(--cloud-img-color);
+}
+
+.cloud2-box {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: -65px;
+  right: -460px;
+  transform: translateX(145px);
+}
+
+.cloud2-box .cloud2 {
+  image-rendering: var(--img-pixelated);
+  filter: var(--cloud-img-color);
+}
+
+.cloud3-box {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: -60px;
+  right: -460px;
+  transform: translateX(145px);
+}
+
+.cloud3-box .cloud3 {
+  image-rendering: var(--img-pixelated);
+  filter: var(--cloud-img-color);
+}
+
+@keyframes clouds {
+  from {
+    right: -78%;
+  }
+
+  to {
+    right: 28.5%;
+  }
+}
+
+.score {
+  position: relative;
+  top: -160px;
+  text-align: right;
+  font-family: var(--dino-game-font);
+  font-size: 0.7rem;
+}
+
+.new-target {
+  animation: scoreTarget 0.2s ease-in-out 8 alternate-reverse;
+}
+
+@keyframes scoreTarget {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.game-over {
+  position: absolute;
+  margin-bottom: 30px;
+  display: none;
+}
+
+.game-over h3 {
+  font-family: var(--dino-game-font);
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-size: 0.8rem;
+}
+
+.game-over button {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-70%, 50%);
+  width: 50px;
+  height: 40px;
+  background-image: url("/img/reload-btn.png");
+  background-repeat: no-repeat;
+  background-size: 55px 50px;
+  background-position: center;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767.98px) {
+  .dino-game-container {
+    width: 85vw;
+    margin-left: 25px;
+  }
+}
